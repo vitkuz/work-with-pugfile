@@ -1,0 +1,18 @@
+include ./mixins/headMetatags
+include ./mixins/navbar
+include ./mixins/navScroller
+include ./mixins/addGlobalScripts
+
+doctype html
+html(lang='ru')
+    head
+        +headMetatags()
+        block head
+    body(class=bodyClasses)
+        input(type='hidden', class='csrf-token', value='1111')
+        +navbar()
+        +navScroller()
+        block content
+
+        +addGlobalScripts()
+        block footer
